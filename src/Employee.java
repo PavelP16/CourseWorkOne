@@ -14,6 +14,26 @@ public class Employee {
         id = idCounter;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee employee)) return false;
+
+        if (getDepartment() != employee.getDepartment()) return false;
+        if (getSalary() != employee.getSalary()) return false;
+        if (getId() != employee.getId()) return false;
+        return getFullName() != null ? getFullName().equals(employee.getFullName()) : employee.getFullName() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getFullName() != null ? getFullName().hashCode() : 0;
+        result = 31 * result + getDepartment();
+        result = 31 * result + getSalary();
+        result = 31 * result + getId();
+        return result;
+    }
+
     public String getFullName() {
         return fullName;
     }
@@ -36,6 +56,8 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+
+
     }
 
     @Override

@@ -3,7 +3,7 @@ public class DataBaseCompany {
     private int size;
 
     public DataBaseCompany() {
-        this.employees = new Employee[10];
+        employees = new Employee[10];
     }
 
     //    реализовал метод, добавляющий сотрудников
@@ -40,7 +40,7 @@ public class DataBaseCompany {
     }
 
     //    реализовал метод по поиску самого низкооплачиваемого сотрудника
-    public void findMinimalSalaryWorker() {
+    public void printMinimalSalaryWorker() {
         Employee minimalSalaryWorker = employees[0];
         for (int i = 0; i < size; i++) {
             if (employees[i].getSalary() < minimalSalaryWorker.getSalary()) {
@@ -50,7 +50,7 @@ public class DataBaseCompany {
         System.out.println("Сотрудник с минимальной зарплатой: " + minimalSalaryWorker.getFullName());
     }
 
-    //    реализовал метод, находящий среднее значение зарплат
+//        реализовал метод, находящий среднее значение зарплат
     public void findAverageSalary() {
         double averageSalary = 0;
         for (int i = 0; i < size; i++) {
@@ -59,6 +59,10 @@ public class DataBaseCompany {
         averageSalary = averageSalary / size;
         System.out.println("Среднее значение зарплат: " + averageSalary + " рублей");
     }
+
+
+
+
 
     //    реализовал метод по поиску самого высокооплачиваемого сотрудника
     public void findHighestSalaryWorker() {
@@ -71,9 +75,9 @@ public class DataBaseCompany {
         System.out.println("Сотрудник с наибольшей зарплатой: " + highestSalaryWorker.getFullName());
     }
 
-    //    реализовал метод, индексирующий все зарплаты на 25%
-    public void indexSalary() {
-        int percent = 25;
+    //    реализовал метод, индексирующий все зарплаты
+    public void indexSalary(int percent) {
+
         for (int i = 0; i < size; i++) {
             employees[i].setSalary(employees[i].getSalary() * percent / 100 + employees[i].getSalary());
         }
@@ -81,7 +85,7 @@ public class DataBaseCompany {
 
     //    реализовал метод по поиску самого низкооплачиваемого сотрудника в отделе
     public void findMinimalSalaryWorkerOfDepartment(int department) {
-        Employee minimalSalaryWorkerOfDepartment = employees[0];
+        Employee minimalSalaryWorkerOfDepartment = null;
         for (int i = 0; i < size; i++) {
             if (employees[i].getDepartment() == department) {
                 minimalSalaryWorkerOfDepartment = employees[i];

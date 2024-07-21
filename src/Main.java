@@ -18,7 +18,7 @@ public class Main {
 
         dataBaseCompany.calculateSalary();
 
-        dataBaseCompany.findMinimalSalaryWorker();
+        dataBaseCompany.printMinimalSalaryWorker();
 
         dataBaseCompany.findHighestSalaryWorker();
 
@@ -32,7 +32,7 @@ public class Main {
 
         dataBaseCompany.findAverageSalaryOfDepartment(2);
 
-        dataBaseCompany.indexSalary();
+        dataBaseCompany.indexSalary(25);
         dataBaseCompany.printAllInformation(); // проверка индексации
 
         dataBaseCompany.findMinimalSalaryWorkerOfDepartment(3);
